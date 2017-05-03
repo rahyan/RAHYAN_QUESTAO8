@@ -1,6 +1,7 @@
 package RAHYAN_QUESTAO8.RAHYAN_QUESTAO8;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Biblioteca {
 	
@@ -14,5 +15,5 @@ public class Biblioteca {
 	public Bibliotecaria contratarBibliotecaria(){
 		return new Bibliotecaria(this);
 	}
-	
+
 }
