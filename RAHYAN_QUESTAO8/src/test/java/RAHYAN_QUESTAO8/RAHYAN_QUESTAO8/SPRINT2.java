@@ -1,7 +1,5 @@
 package RAHYAN_QUESTAO8.RAHYAN_QUESTAO8;
 
-import static org.mockito.Mockito.mock;
-
 import static org.junit.Assert.*;
 import org.junit.Test;
 
