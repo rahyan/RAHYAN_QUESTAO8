@@ -53,6 +53,17 @@ public class Bibliotecaria {
 		}
 	}
 	
+	public boolean bloquearUsuarioPorExtravio(Usuario user){
+		if(!biblioteca.bancoUsuarios.contains(user)){
+			//System.out.println("Usuário não cadastrado, impossível bloquear!");
+			return false;
+		}
+		else{
+			user.status = 2;
+			return true;
+		}
+	}
+	
 	public boolean registrarRetiradaLivro(Livro livro, Usuario user){
 		
 		if(!biblioteca.bancoUsuarios.contains(user)){

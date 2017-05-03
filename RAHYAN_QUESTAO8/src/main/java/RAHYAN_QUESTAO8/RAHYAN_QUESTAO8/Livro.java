@@ -5,12 +5,14 @@ public class Livro {
 	int situacao; //0: disponível; 1: retirado; 2: extraviado
 	int diasQueFaltamParaSerDevoldido;
 	Usuario owner;
+	boolean extraviadoPago;
 	
 	public Livro(String nome){
 		this.nome = nome;
 		situacao = 0;
 		diasQueFaltamParaSerDevoldido = 0;
 		owner = null;
+		extraviadoPago = false;
 	}
 }
 
