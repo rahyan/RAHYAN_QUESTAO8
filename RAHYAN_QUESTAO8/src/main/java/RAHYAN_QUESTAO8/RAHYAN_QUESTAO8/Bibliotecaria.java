@@ -114,9 +114,34 @@ public class Bibliotecaria {
 			}
 			else{
 				System.out.println("Livro '"+ livro.nome + "' devolvido por " + livro.owner.nome + "!");
+				livro.owner.livrosAlugados.remove(livro);
 				livro.situacao = 0;
 				livro.diasQueFaltamParaSerDevoldido = 0;
 				livro.owner = null;
+				return true;
+			}
+		}
+	}
+	
+	public boolean pesquisarLivro(Livro livro){
+		if(biblioteca == null){
+			//System.out.println("Bibliotecária não cadastrada no sistema!");
+			return false;
+		}
+		else{
+			if(!biblioteca.bancoLivros.contains(livro)){
+				System.out.println("Esse livro não existe na biblioteca!");
+				return false;
+			}
+			else{
+				System.out.println("Livro: " + livro.nome + ".");
+				System.out.print("Situação: ");
+				if(livro.situacao == 0) System.out.println("disponível.");
+				else if(livro.situacao == 1) {
+					if(livro.diasQueFaltamParaSerDevoldido >= 0) System.out.println("retirado.");
+					else System.out.println("retirado, porém fora do prazo de entrega");
+				}
+				else if(livro.situacao == 2) System.out.println("extraviado.");
 				return true;
 			}
 		}
